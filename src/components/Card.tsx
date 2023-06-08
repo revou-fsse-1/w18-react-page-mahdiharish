@@ -5,24 +5,20 @@ type CardProps = {
   name: string;
   imgUrl: string;
   isLiked: boolean;
-  setLikeCount: React.Dispatch<React.SetStateAction<number>>;
+  handleLike: (id: number) => void;
 };
 
-const Card: React.FC<CardProps> = ({ name, imgUrl, isLiked, setLikeCount }) => {
+const Card: React.FC<CardProps> = ({ id, name, imgUrl, isLiked, handleLike }) => {
   const [isCardLiked, setIsCardLiked] = useState(isLiked);
 
-  const handleLike = () => {
+  const toggleLike = () => {
     setIsCardLiked(!isCardLiked);
-    if (!isCardLiked) {
-      setLikeCount(prevLikedCount => prevLikedCount + 1);
-    } else {
-      setLikeCount(prevLikedCount => prevLikedCount - 1);
-    }
+    handleLike(id);
   };
 
   return (
     <div>
-      <button type="button" onClick={handleLike}>
+      <button type="button" onClick={toggleLike}>
         {isCardLiked ? 'Liked' : 'Like'}
       </button>
       <img width={50} height={50} src={imgUrl} alt={name} />
