@@ -1,17 +1,27 @@
-import React from "react";
+import React from 'react';
 
-type HeaderProps = {
-    title: String;
-    subtitle: String;
-}
-
-const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
-    return (
-        <header>
-            <h1>{title}</h1>
-            <h2>{subtitle}</h2>
-        </header>
-    );
+type GalleryHeaderProps = {
+  title: string;
+  subtitle: string;
+  likeCount: number;
 };
 
-export default Header;
+const GalleryHeader: React.FC<GalleryHeaderProps> = ({ title, subtitle, likeCount }) => {
+  let likedPhotosText = '';
+  console.log(likeCount);
+  if (likeCount === 0) {
+    likedPhotosText = 'You have no liked photos yet!';
+  } else {
+    likedPhotosText = `You have liked ${likeCount} photo${likeCount > 1 ? 's' : ''}!`;
+  }
+
+  return (
+    <header>
+      <h1>{title}</h1>
+      <h2>{subtitle}</h2>
+      <p>{likedPhotosText}</p>
+    </header>
+  );
+};
+
+export default GalleryHeader;
