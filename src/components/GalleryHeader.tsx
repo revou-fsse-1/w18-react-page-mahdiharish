@@ -8,7 +8,6 @@ type GalleryHeaderProps = {
 
 const GalleryHeader: React.FC<GalleryHeaderProps> = ({ title, subtitle, likeCount }) => {
   let likedPhotosText = '';
-  console.log(likeCount);
   if (likeCount === 0) {
     likedPhotosText = 'You have no liked photos yet!';
   } else {
