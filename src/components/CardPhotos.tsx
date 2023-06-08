@@ -7,7 +7,7 @@ type CardProps = {
   isLiked: boolean;
 };
 
-const Card: React.FC<CardProps> = ({ id, name, imgUrl, isLiked }) => {
+const Card: React.FC<CardProps> = ({ name, imgUrl, isLiked }) => {
   const [isCardLiked, setIsCardLiked] = useState(isLiked);
 
   const handleLike = () => {
