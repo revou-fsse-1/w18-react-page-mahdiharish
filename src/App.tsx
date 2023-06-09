@@ -3,6 +3,7 @@ import Header from "./components/GalleryHeader";
 import CardContainer from "./components/CardContainer";
 import SearchBar from "./components/SearchBar";
 import RegistrationForm from "./components/RegistrationForm";
+import './index.css'
 
 const App: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,7 +29,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="bg-blue-500">
       <Header
         title="Welcome to the Gallery Page!"
         subtitle="List of member photos"
