@@ -25,7 +25,7 @@ const CardContainer: React.FC<CardContainerProps> = ({ searchQuery, setLikeCount
   );
 
   return (
-    <div>
+    <div className="mt-4 max-w-[900px] flex flex-wrap flex-row justify-center items-center gap-4">
       {filteredData.map((item) => (
         <Card
           key={item.id}
