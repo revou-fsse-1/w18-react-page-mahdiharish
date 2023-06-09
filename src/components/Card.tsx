@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = ({ id, name, imgUrl, isLiked, handleLike }) =>
 
   return (
     <div>
-      <button type="button" onClick={toggleLike}>
+      <button className={`${isLiked ? `green` : `white`}`} type="button" onClick={toggleLike}>
         {isCardLiked ? 'Liked' : 'Like'}
       </button>
       <img width={50} height={50} src={imgUrl} alt={name} />
