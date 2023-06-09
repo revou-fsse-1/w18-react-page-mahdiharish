@@ -29,9 +29,9 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-blue-500">
+    <div className="bg-blue-500 flex flex-col items-center">
       <Header
-        title="Welcome to the Gallery Page!"
+        title="Photo Club Gallery"
         subtitle="List of member photos"
         likeCount={likeCount}
       />

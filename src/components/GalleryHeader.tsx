@@ -15,10 +15,14 @@ const GalleryHeader: React.FC<GalleryHeaderProps> = ({ title, subtitle, likeCoun
   }
 
   return (
-    <header>
-      <h1>{title}</h1>
-      <h2>{subtitle}</h2>
-      <p>{likedPhotosText}</p>
+    <header className="py-2 flex justify-center items-center">
+      <div className="absolute top-0 right-0 px-4 py-2 bg-green-500 rounded-bl-2xl">
+        <span className="text-slate-50 text-xl">{likedPhotosText}</span>
+      </div>
+      <div className="text-center">
+        <h1 className="text-4xl text-slate-50 font-bold mb-2">{title}</h1>
+        <h2 className="text-xl text-slate-50 font-semibold">{subtitle}</h2>
+      </div>
     </header>
   );
 };
