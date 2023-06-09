@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({ id, name, imgUrl, isLiked, handleLike }) =>
     <div className="relative w-[200px] h-[270px] rounded-xl overflow-hidden bg-black hover:scale-105 transition-transform">
       <button
         className={`${
-          isCardLiked ? 'bg-green-500 text-white' : 'bg-white text-black'
+          isCardLiked ? 'bg-green-500 text-white text-md' : 'bg-white text-black text-md'
         } absolute top-2 right-2 z-10 px-2 py-1 rounded-full`}
         type="button"
         onClick={toggleLike}

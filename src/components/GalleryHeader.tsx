@@ -15,8 +15,8 @@ const GalleryHeader: React.FC<GalleryHeaderProps> = ({ title, subtitle, likeCoun
   }
 
   return (
-    <header className="py-2 flex justify-center items-center">
-      <div className="absolute top-0 right-0 px-4 py-2 bg-green-500 rounded-bl-2xl">
+    <header className="py-2 flex justify-center items-center relative">
+      <div className="fixed top-0 right-0 px-4 py-2 bg-green-500 rounded-bl-2xl">
         <span className="text-slate-50 text-xl">{likedPhotosText}</span>
       </div>
       <div className="text-center">
