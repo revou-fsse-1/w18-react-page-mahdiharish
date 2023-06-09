@@ -12,13 +12,39 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [firstNameError, setFirstNameError] = useState("");
+  const [lastNameError, setLastNameError] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add any form validation logic here
+    setEmailError("");
+    setFirstNameError("");
+    setLastNameError("");
+    const isValidEmail = (email: string) => {
+    const emailRegex = /\S+@\S+\.\S+/;
+    return emailRegex.test(email);
+  };
 
-    // Call the onSubmit function passed from the parent component
-    onSubmit();
+    let isValid = true;
+    if (email.trim() === "") {
+      setEmailError("Email is required");
+      isValid = false;
+    } else if (!isValidEmail(email)) {
+      setEmailError("Email is invalid");
+      isValid = false;
+    }
+    if (firstName.trim() === "") {
+      setFirstNameError("First name is required");
+      isValid = false;
+    }
+    if (lastName.trim() === "") {
+      setLastNameError("Last name is required");
+      isValid = false;
+    }
+    if (isValid) {
+      onSubmit();
+    }
   };
 
   return (
@@ -33,6 +59,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        {emailError && <p>{emailError}</p>}
 
         <label>First Name:</label>
         <input
@@ -40,6 +67,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />
+        {firstNameError && <p>{firstNameError}</p>}
 
         <label>Last Name:</label>
         <input
@@ -47,6 +75,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
         />
+        {lastNameError && <p>{lastNameError}</p>}
 
         <button type="submit">Register Now</button>
       </form>
