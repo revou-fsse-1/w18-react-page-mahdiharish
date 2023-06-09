@@ -29,7 +29,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-blue-500 flex flex-col items-center">
+    <div className="bg-black flex flex-col items-center">
       <Header
         title="Photo Club Gallery"
         subtitle="List of member photos"
@@ -41,7 +41,9 @@ const App: React.FC = () => {
         setLikeCount={setLikeCount}
       />
 
-      <button onClick={handleOpenRegistrationForm}>
+      <button 
+      className="text-black font-bold text-md mt-6 bg-white py-1 px-4 rounded-lg transform transition-transform hover:scale-105"
+      onClick={handleOpenRegistrationForm}>
         Join Photo Club Membership
       </button>
 
@@ -53,8 +55,8 @@ const App: React.FC = () => {
       )}
 
       {isRegistrationSubmitted && (
-        <div>
-          Your Registration has been submitted successfully!
+        <div className="text-white bg-green-500 text-md font-bold mt-4 py-2 px-4 rounded-lg fixed bottom-4 left-1/2 transform -translate-x-1/2">
+          Your registration has been submitted successfully!
         </div>
       )}
     </div>
