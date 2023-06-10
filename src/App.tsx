@@ -29,7 +29,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-black flex flex-col items-center">
+    <div className="bg-black flex flex-col items-center min-h-screen">
       <Header
         title="Photo Club Gallery"
         subtitle="List of member photos"
